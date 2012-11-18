@@ -34,7 +34,7 @@ class MyPlayer( xbmc.Player ):
   def onPlayBackStarted( self ):
     if self.run:
       movieFullPath       = xbmc.Player().getPlayingFile()
-      if (not xbmc.getCondVisibility("VideoPlayer.HasSubtitles")) and (not movieFullPath.find("http") > -1 ):
+      if (not xbmc.getCondVisibility("VideoPlayer.HasSubtitles")) and (not movieFullPath.find("http") > -1 ) and (not movieFullPath.find("pvr") > -1 ):
         self.run = False
         xbmc.sleep(1000)
         print('AutoSearching for Subs')
