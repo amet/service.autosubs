@@ -17,6 +17,9 @@ __cwd__        = xbmc.translatePath( __addon__.getAddonInfo('path') ).decode("ut
 __profile__    = xbmc.translatePath( __addon__.getAddonInfo('profile') ).decode("utf-8")
 __resource__   = xbmc.translatePath( os.path.join( __cwd__, 'resources' ) ).decode("utf-8")
 
+__settings__   = xbmcaddon.Addon( "script.autosubs" )
+ignore_words   = __settings__.getSetting("ignore_words")
+
 sys.path.append (__resource__)
 
 class MyPlayer( xbmc.Player ):
@@ -34,7 +37,8 @@ class MyPlayer( xbmc.Player ):
   def onPlayBackStarted( self ):
     if self.run:
       movieFullPath       = xbmc.Player().getPlayingFile()
-      if (not xbmc.getCondVisibility("VideoPlayer.HasSubtitles")) and (not movieFullPath.find("http") > -1 ) and (not movieFullPath.find("pvr") > -1 ):
+      #if (not xbmc.getCondVisibility("VideoPlayer.HasSubtitles")) and (not movieFullPath.find("http") > -1 ) and (not movieFullPath.find("pvr") > -1 ):
+      if (not xbmc.getCondVisibility("VideoPlayer.HasSubtitles")) and all(movieFullPath.find(v) <= -1 for v in ignore_words):
         self.run = False
         xbmc.sleep(1000)
         print('AutoSearching for Subs')
