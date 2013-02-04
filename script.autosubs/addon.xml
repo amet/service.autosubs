@@ -8,7 +8,7 @@
   <extension point="xbmc.service" library="default.py" start="login"></extension> 
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Auto Search for Subtitles on Play</summary>
-    <description lang="en">Auto Search for Subtitles on Playback start if no subs are found, only works with XBMC Subtitles[CR][CR]\Icon credits goes to zNET Computer Solutions http://www.znetcs.pl</description>
+    <description lang="en">Auto Search for Subtitles on Playback start if no subs are found, only works with XBMC Subtitles[CR][CR]Icon credits goes to zNET Computer Solutions http://www.znetcs.pl</description>
     <platform>all</platform>
     <language>en</language>
   </extension>
