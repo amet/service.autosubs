@@ -18,14 +18,23 @@ __profile__    = xbmc.translatePath( __addon__.getAddonInfo('profile') ).decode(
 __resource__   = xbmc.translatePath( os.path.join( __cwd__, 'resources' ) ).decode("utf-8")
 
 __settings__   = xbmcaddon.Addon( "script.autosubs" )
-ignore_words   = __settings__.getSetting("ignore_words")
+
+ignore_words   = (__settings__.getSetting( 'ignore_words' ).split(','))
 
 sys.path.append (__resource__)
+
+def log(txt):
+  if isinstance (txt,str):
+    txt = txt.decode("utf-8")
+  message = u'%s: %s' % (__scriptname__, txt)
+  xbmc.log(msg=message.encode("utf-8"))
+
+log('[%s] - Version: %s Started' % (__scriptname__,__version__))
 
 class MyPlayer( xbmc.Player ):
   def __init__( self, *args, **kwargs ):
     xbmc.Player.__init__( self )
-    print('MyPlayer - init')
+    log('MyPlayer - init')
     self.run = True
     
   def onPlayBackStopped( self ):
@@ -40,11 +49,10 @@ class MyPlayer( xbmc.Player ):
       if (not xbmc.getCondVisibility("VideoPlayer.HasSubtitles")) and all(movieFullPath.find(v) <= -1 for v in ignore_words):
         self.run = False
         xbmc.sleep(1000)
-        print('AutoSearching for Subs')
+        log('AutoSearching for Subs')
         xbmc.executebuiltin('XBMC.RunScript(script.xbmc.subtitles)')
       else:
-        self.run = False  
-      
+        self.run = False
 
 player_monitor = MyPlayer()
      
