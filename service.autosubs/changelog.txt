@@ -1,3 +1,6 @@
+0.0.5
+- Renamed script to service.autosubs
+
 0.0.4
 - Added configuration options
 
