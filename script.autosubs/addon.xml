@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="script.autosubs"
-    name="AutoSubs" version="0.0.3" provider-name="">
+    name="AutoSubs" version="0.0.4" provider-name="amet">
   <requires>
     <import addon="xbmc.python" version="2.0"/>
     <import addon="script.xbmc.subtitles" version="3.0.0"/>
@@ -8,7 +8,7 @@
   <extension point="xbmc.service" library="default.py" start="login"></extension> 
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Auto Search for Subtitles on Play</summary>
-    <description lang="en">Auto Search for Subtitles on Playback start if no subs are found, only works with XBMC Subtitles</description>
+    <description lang="en">Auto Search for Subtitles on Playback start if no subs are found, only works with XBMC Subtitles[CR][CR]Icon credits goes to zNET Computer Solutions http://www.znetcs.pl</description>
     <platform>all</platform>
     <language>en</language>
   </extension>
