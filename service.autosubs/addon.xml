@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.autosubs"
-    name="AutoSubs" version="0.0.4" provider-name="amet">
+<addon id="service.autosubs"
+    name="AutoSubs" version="0.0.5" provider-name="amet">
   <requires>
     <import addon="xbmc.python" version="2.0"/>
     <import addon="script.xbmc.subtitles" version="3.0.0"/>
