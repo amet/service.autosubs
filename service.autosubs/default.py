@@ -17,7 +17,7 @@ __cwd__        = xbmc.translatePath( __addon__.getAddonInfo('path') ).decode("ut
 __profile__    = xbmc.translatePath( __addon__.getAddonInfo('profile') ).decode("utf-8")
 __resource__   = xbmc.translatePath( os.path.join( __cwd__, 'resources' ) ).decode("utf-8")
 
-__settings__   = xbmcaddon.Addon( "script.autosubs" )
+__settings__   = xbmcaddon.Addon( "service.autosubs" )
 
 ignore_words   = (__settings__.getSetting( 'ignore_words' ).split(','))
 
