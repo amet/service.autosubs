@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <settings>
 	<category id="general" label="30011">
-		<setting id="ignore_words" type="text" default="http,pvr" label="30100"/>
+		<setting id="debug" type="bool" label="30050" default="true"/>
+		<setting label="30100" type="lsep"/>
+		<setting id="ExcludeLiveTV" type="bool" label="30101" default="false"/>
+		<setting id="ExcludeHTTP" type="bool" label="30102" default="false"/>    
+		<setting id="ExcludePathOption" type="bool" label="30103" default="false" />
+		<setting id="ExcludePath" type="folder" source="video" label="30104" default="" visible= "eq(-1,true)" enable="eq(-1,true)" />
+		<setting id="ExcludePathOption2" type="bool" label="30103" default="false" visible= "eq(-2,true)" enable="eq(-2,true)" />
+		<setting id="ExcludePath2" type="folder" source="video" label="30104" default="" visible= "eq(-1,true)" enable="eq(-1,true)" />
+		<setting id="ExcludePathOption3" type="bool" label="30103" default="false" visible= "eq(-2,true)" enable="eq(-2,true)" />
+		<setting id="ExcludePath3" type="folder" source="video" label="30104" default="" visible= "eq(-1,true)" enable="eq(-1,true)" />
 	</category>
 </settings>
