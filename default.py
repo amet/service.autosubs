@@ -89,7 +89,7 @@ class AutoSubsPlayer(xbmc.Player):
 		self.run = True         
   
 	def onPlayBackStarted(self):
-		if self.run:
+		if xbmc.Player().isPlayingVideo():
 			Debug("[AutoSubsPlayer] Playback started")
 			# check for exclusion
 			_filename = self.getPlayingFile()
