@@ -50,7 +50,7 @@ class MyPlayer( xbmc.Player ):
         self.run = False
         xbmc.sleep(1000)
         log('AutoSearching for Subs')
-        xbmc.executebuiltin('XBMC.RunScript(script.xbmc.subtitles)')
+        xbmc.executebuiltin('XBMC.ActivateWindow(SubtitleSearch)')
       else:
         self.run = False
 
