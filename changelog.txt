@@ -1,6 +1,3 @@
-0.0.6 - by CaTz
-- Change the dependency to support Gotham
-
 0.0.5
 - Renamed script to service.autosubs
 
