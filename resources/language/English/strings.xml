@@ -4,4 +4,6 @@
 	<string id="30011">General</string>
 	
 	<string id="30100">Ignore words, comma separated</string>
+    <string id="30101">Look for a specific language</string>
+    <string id="30102">Subtitle language</string>
 </strings>

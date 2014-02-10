@@ -2,5 +2,7 @@
 <settings>
 	<category id="general" label="30011">
 		<setting id="ignore_words" type="text" default="http,pvr" label="30100"/>
+        <setting id="check_for_specific" type="bool" default="false" label="30101"/>
+        <setting id="selected_language" type="select" subsetting="true" enable="eq(-1,true)" visible="eq(-1,true)" default="English" values="Chinese|Dutch|English|Finnish|French|German|Hebrew|Hungarian|Italian|Japanese|Polish|Portuguese|Russian|Spanish|Swedish" label="30102" />
 	</category>
 </settings>
