@@ -19,14 +19,16 @@ __cwd__        = xbmc.translatePath( __addon__.getAddonInfo('path') ).decode("ut
 __profile__    = xbmc.translatePath( __addon__.getAddonInfo('profile') ).decode("utf-8")
 __resource__   = xbmc.translatePath( os.path.join( __cwd__, 'resources' ) ).decode("utf-8")
 
+ignore_words = (__addon__.getSetting('ignore_words').split(','))
+
 sys.path.append (__resource__)
 
 def Debug(msg, force = False):
 	if(debug == "true" or force):
 		try:
-			print "[AutoSubs] " + msg
+			print "#####[AutoSubs]##### " + msg
 		except UnicodeEncodeError:
-			print "[AutoSubs] " + msg.encode( "utf-8", "ignore" )
+			print "#####[AutoSubs]##### " + msg.encode( "utf-8", "ignore" )
 
 Debug("Loading '%s' version '%s'" % (__scriptname__, __version__))
 
@@ -54,6 +56,10 @@ def isExcluded(fullpath):
 		Debug("isExcluded(): Video is playing via HTTP source, which is currently set as excluded location.")
 		return True
 
+	if (fullpath.find("googlevideo") > -1) and getSettingAsBool('ExcludeGoogle'):
+		Debug("isExcluded(): Video is playing via Youtube source, which is currently set as excluded location.")
+		return True
+
 	ExcludePath = getSetting('ExcludePath')
 	if ExcludePath and getSettingAsBool('ExcludePathOption'):
 		if (fullpath.find(ExcludePath) > -1):
@@ -72,6 +78,18 @@ def isExcluded(fullpath):
 			Debug("isExcluded(): Video is playing from '%s', which is currently set as excluded path 3." % ExcludePath3)
 			return True
 
+	ExcludePath4 = getSetting('ExcludePath4')
+	if ExcludePath4 and getSettingAsBool('ExcludePathOption4'):
+		if (fullpath.find(ExcludePath4) > -1):
+			Debug("isExcluded(): Video is playing from '%s', which is currently set as excluded path 4." % ExcludePath4)
+			return True
+
+	ExcludePath5 = getSetting('ExcludePath5')
+	if ExcludePath5 and getSettingAsBool('ExcludePathOption5'):
+		if (fullpath.find(ExcludePath5) > -1):
+			Debug("isExcluded(): Video is playing from '%s', which is currently set as excluded path 5." % ExcludePath5)
+			return True
+
 	return False
 
 class AutoSubsPlayer(xbmc.Player):
@@ -80,20 +98,37 @@ class AutoSubsPlayer(xbmc.Player):
 		Debug("[AutoSubsPlayer] Initalized")
 		self.run = True
 
+	def onPlayBackStopped(self):
+		self.run = True
+
+	def onPlayBackEnded(self):
+		self.run = True
+ 
 	def onPlayBackStarted(self):
-		if xbmc.Player().isPlayingVideo():
+		check_for_specific = (__addon__.getSetting('check_for_specific').lower() == 'true')
+		specific_language = (__addon__.getSetting('selected_language'))
+		specific_language = xbmc.convertLanguage(specific_language, xbmc.ISO_639_2)
+
+		if xbmc.Player().isPlaying():
 			Debug("[AutoSubsPlayer] Playback started")
+
+			movieFullPath = xbmc.Player().getPlayingFile()
+			availableLangs = xbmc.Player().getAvailableSubtitleStreams()
+
 			# check for exclusion
-			_filename = self.getPlayingFile()
 			if isExcluded(_filename):
 				Debug("Ignored because '%s' is in exclusion settings." % _filename)
+				return
+				
+			elif ((( xbmc.getCondVisibility("VideoPlayer.HasSubtitles")) or (check_for_specific and not specific_language in availableLangs)) and all(movieFullPath.find(v) <= -1 for v in ignore_words)):
+				Debug("Ignored because '%s' is in ignore words settings." % _filename)
 				return
 
 			if not xbmc.getCondVisibility("VideoPlayer.HasSubtitles"):
 				self.run = False
 				xbmc.sleep(1000)
 				Debug("No subs found, auto searching for subs")
-				xbmc.executebuiltin("XBMC.RunScript(script.xbmc.subtitles)")
+				xbmc.executebuiltin("XBMC.ActivateWindow(SubtitleSearch)")
 			else:
 				Debug("Local subs found")
 				self.run = False
