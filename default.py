@@ -116,12 +116,12 @@ class AutoSubsPlayer(xbmc.Player):
 			availableLangs = xbmc.Player().getAvailableSubtitleStreams()
 
 			# check for exclusion
-			if isExcluded(_filename):
-				Debug("Ignored because '%s' is in exclusion settings." % _filename)
+			if isExcluded(movieFullPath ):
+				Debug("Ignored because '%s' is in exclusion settings." % movieFullPath )
 				return
 				
 			elif ((( xbmc.getCondVisibility("VideoPlayer.HasSubtitles")) or (check_for_specific and not specific_language in availableLangs)) and all(movieFullPath.find(v) <= -1 for v in ignore_words)):
-				Debug("Ignored because '%s' is in ignore words settings." % _filename)
+				Debug("Ignored because '%s' is in ignore words settings." % movieFullPath )
 				return
 
 			if not xbmc.getCondVisibility("VideoPlayer.HasSubtitles"):
