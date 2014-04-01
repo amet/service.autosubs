@@ -55,7 +55,8 @@ class MyPlayer(xbmc.Player):
             movieFullPath = xbmc.Player().getPlayingFile()
             availableLangs = xbmc.Player().getAvailableSubtitleStreams()
 
-            if (((not xbmc.getCondVisibility("VideoPlayer.HasSubtitles")) or (
+            if (xbmc.Player().isPlayingVideo() and 
+		((not xbmc.getCondVisibility("VideoPlayer.HasSubtitles")) or (
                         check_for_specific and not specific_language in availableLangs)) and all(
                         movieFullPath.find(v) <= -1 for v in ignore_words)):
                 self.run = False
