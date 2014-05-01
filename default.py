@@ -115,7 +115,7 @@ class AutoSubsPlayer(xbmc.Player):
             movieFullPath = xbmc.Player().getPlayingFile()
             availableLangs = xbmc.Player().getAvailableSubtitleStreams()
 
-            if (xbmc.Player().isPlayingVideo(_filename) and 
+            if (xbmc.Player().isPlayingVideo() and 
 		((not xbmc.getCondVisibility("VideoPlayer.HasSubtitles")) or (
                         check_for_specific and not specific_language in availableLangs)) and all(
                         movieFullPath.find(v) <= -1 for v in ignore_words)) or (not isExcluded(movieFullPath)):
