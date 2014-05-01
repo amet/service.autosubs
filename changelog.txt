@@ -1,3 +1,7 @@
+0.0.9 - schumi2004
+- added debug function
+- added exclude paths
+
 0.0.8 - by sagiben
 - popup subtitles window only for Movie files, otherwise it pops also for audio
 
