@@ -2,10 +2,17 @@
 <strings>
     <string id="30010">Auto Subs</string>
     <string id="30011">General</string>
+    <string id="30012">Enable debug mode</string>
 
     <string id="30100">Ignore words, comma separated</string>
     <string id="30101">Look for a specific language</string>
     <string id="30102">Subtitle language</string>
+    <string id="30103">Exclusions</string>
+    <string id="30104">Exclude Live TV</string>
+    <string id="30105">Exclude HTTP sources</string>  
+    <string id="30106">Exclude path</string>
+    <string id="30107">Folder's path (and subfolders)</string>
+
     <!--#Languages-->
 
     <string id="30201">Albanian</string>
