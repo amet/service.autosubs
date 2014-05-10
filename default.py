@@ -87,7 +87,7 @@ def isExcluded(movieFullPath):
             Debug("isExcluded(): Video is playing from '%s', which is currently set as excluded path 5." % ExcludePath5)
             return False
 
-	return True
+    return True
 
 
 class AutoSubsPlayer(xbmc.Player):
