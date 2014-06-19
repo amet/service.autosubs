@@ -20,6 +20,7 @@ __resource__ = xbmc.translatePath(os.path.join(__cwd__, 'resources')).decode("ut
 __settings__ = xbmcaddon.Addon("service.autosubs")
 
 ignore_words = (__settings__.getSetting('ignore_words').split(','))
+ExcludeTime = int((__settings__.getSetting('ExcludeTime')))*60
 
 sys.path.append(__resource__)
 
@@ -112,8 +113,9 @@ class AutoSubsPlayer(xbmc.Player):
         if self.run:
             movieFullPath = xbmc.Player().getPlayingFile()
             availableLangs = xbmc.Player().getAvailableSubtitleStreams()
-
-            if (xbmc.Player().isPlayingVideo() and ((not xbmc.getCondVisibility("VideoPlayer.HasSubtitles")) or (check_for_specific and not specific_language in availableLangs)) and all(movieFullPath.find (v) <= -1 for v in ignore_words) and (isExcluded(movieFullPath)) ):
+            totalTime = xbmc.Player().getTotalTime()
+			
+            if (xbmc.Player().isPlayingVideo() and totalTime > ExcludeTime and ((not xbmc.getCondVisibility("VideoPlayer.HasSubtitles")) or (check_for_specific and not specific_language in availableLangs)) and all(movieFullPath.find (v) <= -1 for v in ignore_words) and (isExcluded(movieFullPath)) ):
                 self.run = False
                 xbmc.sleep(1000)
                 Debug('[AutoSubsPlayer] Started: AutoSearching for Subs')
