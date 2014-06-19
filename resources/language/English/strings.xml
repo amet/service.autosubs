@@ -12,7 +12,8 @@
     <string id="30105">Exclude HTTP sources</string>  
     <string id="30106">Exclude path</string>
     <string id="30107">Folder's path (and subfolders)</string>
-
+    <string id="30108">Exclude for videos with less than X minutes</string>
+	
     <!--#Languages-->
 
     <string id="30201">Albanian</string>
