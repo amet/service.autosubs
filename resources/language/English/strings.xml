@@ -1,71 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <strings>
-    <string id="30010">Auto Subs</string>
-    <string id="30011">General</string>
-    <string id="30012">Enable debug mode</string>
-
-    <string id="30100">Ignore words, comma separated</string>
+    <!-- General -->
+    <string id="30010">General</string>
+    <string id="30100">Enable debug mode</string>
     <string id="30101">Look for a specific language</string>
     <string id="30102">Subtitle language</string>
-    <string id="30103">Exclusions</string>
-    <string id="30104">Exclude Live TV</string>
-    <string id="30105">Exclude HTTP sources</string>  
-    <string id="30106">Exclude path</string>
-    <string id="30107">Folder's path (and subfolders)</string>
-    <string id="30108">Exclude for videos with less than X minutes</string>
-	
-    <!--#Languages-->
 
-    <string id="30201">Albanian</string>
-    <string id="30202">Arabic</string>
-    <string id="30203">Belarusian</string>
-    <string id="30204">Bosnian (Latin)</string>
-    <string id="30205">Bulgarian</string>
-    <string id="30206">Catalan</string>
-    <string id="30207">Chinese</string>
-    <string id="30208">Croatian</string>
-    <string id="30209">Czech</string>
-    <string id="30210">Danish</string>
-    <string id="30211">Dutch</string>
-    <string id="30212">English</string>
-    <string id="30213">Estonian</string>
-    <string id="30214">Finnish</string>
-    <string id="30215">French</string>
-    <string id="30216">German</string>
-    <string id="30217">Greek</string>
-    <string id="30218">Hebrew</string>
-    <string id="30219">Hindi</string>
-    <string id="30220">Hungarian</string>
-    <string id="30221">Icelandic</string>
-    <string id="30222">Indonesian</string>
-    <!--#empty string with id 30223-->
-
-    <string id="30224">Italian</string>
-    <string id="30225">Japanese</string>
-    <string id="30226">Korean</string>
-    <string id="30227">Latvian</string>
-    <string id="30228">Lithuanian</string>
-    <string id="30229">Macedonian</string>
-    <string id="30230">Norwegian</string>
-    <!--#empty string with id 30231-->
-
-    <string id="30232">Polish</string>
-    <string id="30233">Portuguese</string>
-    <string id="30234">Portuguese (Brazil)</string>
-    <string id="30235">Romanian</string>
-    <string id="30236">Russian</string>
-    <string id="30237">SerbianLatin</string>
-    <string id="30238">Slovak</string>
-    <string id="30239">Slovenian</string>
-    <string id="30240">Spanish</string>
-    <!--#empty string with id 30241-->
-
-    <string id="30242">Swedish</string>
-    <string id="30243">Thai</string>
-    <string id="30244">Turkish</string>
-    <string id="30245">Ukrainian</string>
-    <string id="30246">Vietnamese</string>
-    <string id="30247">Farsi</string>
-    <string id="30248">Malay</string>
-
+    <!-- Exclusions -->
+    <string id="30020">Exclusions</string>
+    <string id="30200">Exclude for videos with less than X minutes</string>
+    <string id="30201">Ignore words, comma separated</string>
+    <string id="30202">Exclude Live TV</string>
+    <string id="30203">Exclude HTTP sources</string>  
+    <string id="30204">Exclude path</string>
+    <string id="30205">Folder's path (and subfolders)</string>
 </strings>
