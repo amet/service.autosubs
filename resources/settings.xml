@@ -4,7 +4,7 @@
 	<setting id="debug" type="bool" label="30012" default="false"/>
 	<setting id="ignore_words" type="text" default="theme" label="30100"/>
         <setting id="check_for_specific" type="bool" default="false" label="30101"/>
-        <setting id="selected_language" type="select" subsetting="true" enable="eq(-1,true)" visible="eq(-1,true)" label="30102" default="11" lvalues="30201|30202|30203|30204|30205|30206|30207|30208|30209|30210|30211|30212|30213|30247|30214|30215|30216|30217|30218|30219|30220|30221|30222|30224|30225|30226|30227|30228|30229|30248|30230|30232|30233|30234|30235|30236|30237|30238|30239|30240|30242|30243|30244|30245|30246" />
+        <setting id="selected_language" type="select" enable="eq(-1,true)" visible="eq(-1,true)" label="30102" default="English" values="Afrikaans|Albanian|Arabic|Armenian|Basque|Bengali|Bosnian|Breton|Bulgarian|Burmese|Catalan|Chinese|Croatian|Czech|Danish|Dutch|English|Esperanto|Estonian|Finnish|French|Galician|Georgian|German|Greek|Hebrew|Hindi|Hungarian|Icelandic|Indonesian|Italian|Japanese|Kazakh|Khmer|Korean|Latvian|Lithuanian|Luxembourgish|Macedonian|Malay|Malayalam|Manipuri|Mongolian|Montenegrin|Norwegian|Occitan|Persian|Polish|Portuguese|Portuguese (Brazil)|Romanian|Russian|Serbian|Sinhalese|Slovak|Slovenian|Spanish|Swahili|Swedish|Syriac|Tagalog|Tamil|Telugu|Thai|Turkish|Ukrainian|Urdu" />
 	<setting id="ExcludeLiveTV" type="bool" label="30104" default="false"/>
 	<setting id="ExcludeHTTP" type="bool" label="30105" default="false"/>    
 	<setting id="ExcludeTime" type="number" label="30108" default="15"/>   	
