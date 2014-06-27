@@ -94,15 +94,15 @@ def isExcluded(movieFullPath):
 class AutoSubsPlayer(xbmc.Player):
     def __init__(self, *args, **kwargs):
         xbmc.Player.__init__(self)
-        Debug("[AutoSubsPlayer] Initalized")
+        Debug("Initalized")
         self.run = True
 
     def onPlayBackStopped(self):
-        Debug("[AutoSubsPlayer] Stopped")
+        Debug("Stopped")
         self.run = True
 
     def onPlayBackEnded(self):
-        Debug("[AutoSubsPlayer] Ended")
+        Debug("Ended")
         self.run = True
 
     def onPlayBackStarted(self):
@@ -112,16 +112,19 @@ class AutoSubsPlayer(xbmc.Player):
 
         if self.run:
             movieFullPath = xbmc.Player().getPlayingFile()
+            Debug("movieFullPath '%s'" % movieFullPath)
             availableLangs = xbmc.Player().getAvailableSubtitleStreams()
+            Debug("availableLangs '%s'" % availableLangs)
             totalTime = xbmc.Player().getTotalTime()
+            Debug("totalTime '%s'" % totalTime)
 			
             if (xbmc.Player().isPlayingVideo() and totalTime > ExcludeTime and ((not xbmc.getCondVisibility("VideoPlayer.HasSubtitles")) or (check_for_specific and not specific_language in availableLangs)) and all(movieFullPath.find (v) <= -1 for v in ignore_words) and (isExcluded(movieFullPath)) ):
                 self.run = False
                 xbmc.sleep(1000)
-                Debug('[AutoSubsPlayer] Started: AutoSearching for Subs')
+                Debug('Started: AutoSearching for Subs')
                 xbmc.executebuiltin('XBMC.ActivateWindow(SubtitleSearch)')
             else:
-                Debug('[AutoSubsPlayer] Started: Subs found or Excluded')
+                Debug('Started: Subs found or Excluded')
                 self.run = False
 
 
