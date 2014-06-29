@@ -113,6 +113,7 @@ class AutoSubsPlayer(xbmc.Player):
         if self.run:
             movieFullPath = xbmc.Player().getPlayingFile()
             Debug("movieFullPath '%s'" % movieFullPath)
+            xbmc.sleep(1000)
             availableLangs = xbmc.Player().getAvailableSubtitleStreams()
             Debug("availableLangs '%s'" % availableLangs)
             totalTime = xbmc.Player().getTotalTime()
