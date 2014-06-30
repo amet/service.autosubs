@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <strings>
     <!-- General -->
-    <string id="30010">Geral</string>
-    <string id="30100">Activar modo depuração</string>
-    <string id="30101">Procurar por um Idioma Especifico</string>
-    <string id="30102">Idioma das Legendas</string>
+    <string id="32010">Geral</string>
+    <string id="32100">Activar modo depuração</string>
+    <string id="32101">Procurar por um Idioma Especifico</string>
+    <string id="32102">Idioma das Legendas</string>
     
     <!-- Exclusions -->     
-    <string id="30020">Exclusões</string>
-    <string id="30200">Excluir para videos com menos de X minutos</string>
-    <string id="30201">Ignorar palavras, separadas por virgulas</string>
-    <string id="30202">Excluir TV ao Vivo</string>
-    <string id="30203">Excluir fontes HTTP</string>  
-    <string id="30204">Excluir caminho</string>
-    <string id="30205">Caminho para a pasta (e subpastas)</string>
+    <string id="32020">Exclusões</string>
+    <string id="32200">Excluir para videos com menos de X minutos</string>
+    <string id="32201">Ignorar palavras, separadas por virgulas</string>
+    <string id="32202">Excluir TV ao Vivo</string>
+    <string id="32203">Excluir fontes HTTP</string>  
+    <string id="32204">Excluir caminho</string>
+    <string id="32205">Caminho para a pasta (e subpastas)</string>
 </strings>
