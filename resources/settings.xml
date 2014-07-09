@@ -12,7 +12,8 @@
         <setting id="ExcludeTime" type="number" label="32200" default="15"/>   	
         <setting id="ignore_words" type="text" default="theme" label="32201"/>
         <setting id="ExcludeLiveTV" type="bool" label="32202" default="false"/>
-        <setting id="ExcludeHTTP" type="bool" label="32203" default="false"/>    
+        <setting id="ExcludeHTTP" type="bool" label="32203" default="false"/>
+        <setting id="ExcludeVideoClip" type="bool" label="32206" default="false"/>
         <setting id="ExcludePathOption" type="bool" label="32204" default="false" />
         <setting id="ExcludePath" type="folder" source="video" label="32205" default="" visible= "eq(-1,true)" enable="eq(-1,true)" />
         <setting id="ExcludePathOption2" type="bool" label="32204" default="false" visible= "eq(-2,true)" enable="eq(-2,true)" />

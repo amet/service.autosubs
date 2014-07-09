@@ -118,8 +118,12 @@ class AutoSubsPlayer(xbmc.Player):
             Debug("availableLangs '%s'" % availableLangs)
             totalTime = xbmc.Player().getTotalTime()
             Debug("totalTime '%s'" % totalTime)
+            videoclipAlbum = ''			
+            if getSettingAsBool('ExcludeVideoClip'):
+                videoclipAlbum = xbmc.InfoTagMusic.getAlbum()
+                Debug("videoclipAlbum '%s'" % videoclipAlbum)
 			
-            if (xbmc.Player().isPlayingVideo() and totalTime > ExcludeTime and ((not xbmc.getCondVisibility("VideoPlayer.HasSubtitles")) or (check_for_specific and not specific_language in availableLangs)) and all(movieFullPath.find (v) <= -1 for v in ignore_words) and (isExcluded(movieFullPath)) ):
+            if (xbmc.Player().isPlayingVideo() and totalTime > ExcludeTime and (not videoclipAlbum) and ((not xbmc.getCondVisibility("VideoPlayer.HasSubtitles")) or (check_for_specific and not specific_language in availableLangs)) and all(movieFullPath.find (v) <= -1 for v in ignore_words) and (isExcluded(movieFullPath)) ):
                 self.run = False
                 xbmc.sleep(1000)
                 Debug('Started: AutoSearching for Subs')
