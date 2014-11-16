@@ -109,7 +109,10 @@ class AutoSubsPlayer(xbmc.Player):
         check_for_specific = (__addon__.getSetting('check_for_specific').lower() == 'true')
         specific_language = (__addon__.getSetting('selected_language'))
         specific_language = xbmc.convertLanguage(specific_language, xbmc.ISO_639_2)
-
+        try:
+            xbmc.sleep(3000)
+            if self.getSubtitles(): self.run = false
+        except: pass
         if self.run:
             movieFullPath = xbmc.Player().getPlayingFile()
             Debug("movieFullPath '%s'" % movieFullPath)
