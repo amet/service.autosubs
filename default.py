@@ -158,7 +158,7 @@ while not xbmc.abortRequested:
     if xbmc.Player().isPlaying():
         if (not xbmc.getCondVisibility("VideoPlayer.HasSubtitles")):
             xbmc.sleep(3000)
-            if xbmc.Player().getPlayingFile() != currentPlaying:
+            if xbmc.Player().getPlayingFile() != currentPlaying and xbmc.Player().isPlayingVideo():
                 xbmc.executebuiltin('XBMC.ActivateWindow(SubtitleSearch)')
                 currentPlaying = xbmc.Player().getPlayingFile()
     xbmc.sleep(1000)
