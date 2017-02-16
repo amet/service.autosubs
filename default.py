@@ -147,6 +147,7 @@ class AutoSubsPlayer(xbmc.Player):
                     xbmc.executebuiltin('XBMC.ActivateWindow(SubtitleSearch)')
                 else:
                     Debug('Started: Subs found or Excluded')
+                    xbmc.Player().showSubtitles(True)
                     self.run = False
         else:
             Debug('Started: Not a video file, finishing')
