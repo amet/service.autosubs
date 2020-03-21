@@ -29,13 +29,7 @@ sys.path.append(__resource__)
 
 def Debug(msg, force=False):
     if (debug == "true" or force):
-        try:
-            print
-            "#####[AutoSubs]##### " + msg
-        except UnicodeEncodeError:
-            print
-            "#####[AutoSubs]##### " + msg.encode("utf-8", "ignore")
-
+      print ("#####[AutoSubs]##### " + msg)
 
 Debug("Loading '%s' version '%s'" % (__scriptname__, __version__))
 
@@ -144,7 +138,7 @@ class AutoSubsPlayer(xbmc.Player):
                     self.run = False
                     xbmc.sleep(1000)
                     Debug('Started: AutoSearching for Subs')
-                    xbmc.executebuiltin('XBMC.ActivateWindow(SubtitleSearch)')
+                    xbmc.executebuiltin('ActivateWindow(SubtitleSearch)')
                 else:
                     Debug('Started: Subs found or Excluded')
                     xbmc.Player().showSubtitles(True)
@@ -160,7 +154,7 @@ while not xbmc.abortRequested:
         if (not xbmc.getCondVisibility("VideoPlayer.HasSubtitles")):
             xbmc.sleep(3000)
             if xbmc.Player().getPlayingFile() != currentPlaying and xbmc.Player().isPlayingVideo():
-                xbmc.executebuiltin('XBMC.ActivateWindow(SubtitleSearch)')
+                xbmc.executebuiltin('ActivateWindow(SubtitleSearch)')
                 currentPlaying = xbmc.Player().getPlayingFile()
     xbmc.sleep(1000)
 
