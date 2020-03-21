@@ -13,9 +13,9 @@ __cwd__ = __addon__.getAddonInfo('path')
 __version__ = __addon__.getAddonInfo('version')
 __language__ = __addon__.getLocalizedString
 debug = __addon__.getSetting("debug")
-__cwd__ = xbmc.translatePath(__addon__.getAddonInfo('path')).decode("utf-8")
-__profile__ = xbmc.translatePath(__addon__.getAddonInfo('profile')).decode("utf-8")
-__resource__ = xbmc.translatePath(os.path.join(__cwd__, 'resources')).decode("utf-8")
+__cwd__ = xbmc.translatePath(__addon__.getAddonInfo('path'))
+__profile__ = xbmc.translatePath(__addon__.getAddonInfo('profile'))
+__resource__ = xbmc.translatePath(os.path.join(__cwd__, 'resources'))
 
 __settings__ = xbmcaddon.Addon("service.autosubs")
 
