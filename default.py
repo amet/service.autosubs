@@ -13,9 +13,9 @@ __cwd__ = __addon__.getAddonInfo('path')
 __version__ = __addon__.getAddonInfo('version')
 __language__ = __addon__.getLocalizedString
 debug = __addon__.getSetting("debug")
-__cwd__ = xbmc.translatePath(__addon__.getAddonInfo('path')).decode("utf-8")
-__profile__ = xbmc.translatePath(__addon__.getAddonInfo('profile')).decode("utf-8")
-__resource__ = xbmc.translatePath(os.path.join(__cwd__, 'resources')).decode("utf-8")
+__cwd__ = xbmc.translatePath(__addon__.getAddonInfo('path'))
+__profile__ = xbmc.translatePath(__addon__.getAddonInfo('profile'))
+__resource__ = xbmc.translatePath(os.path.join(__cwd__, 'resources'))
 
 __settings__ = xbmcaddon.Addon("service.autosubs")
 
@@ -29,13 +29,7 @@ sys.path.append(__resource__)
 
 def Debug(msg, force=False):
     if (debug == "true" or force):
-        try:
-            print
-            "#####[AutoSubs]##### " + msg
-        except UnicodeEncodeError:
-            print
-            "#####[AutoSubs]##### " + msg.encode("utf-8", "ignore")
-
+      print ("#####[AutoSubs]##### " + msg)
 
 Debug("Loading '%s' version '%s'" % (__scriptname__, __version__))
 
@@ -144,7 +138,7 @@ class AutoSubsPlayer(xbmc.Player):
                     self.run = False
                     xbmc.sleep(1000)
                     Debug('Started: AutoSearching for Subs')
-                    xbmc.executebuiltin('XBMC.ActivateWindow(SubtitleSearch)')
+                    xbmc.executebuiltin('ActivateWindow(SubtitleSearch)')
                 else:
                     Debug('Started: Subs found or Excluded')
                     xbmc.Player().showSubtitles(True)
@@ -160,7 +154,7 @@ while not xbmc.abortRequested:
         if (not xbmc.getCondVisibility("VideoPlayer.HasSubtitles")):
             xbmc.sleep(3000)
             if xbmc.Player().getPlayingFile() != currentPlaying and xbmc.Player().isPlayingVideo():
-                xbmc.executebuiltin('XBMC.ActivateWindow(SubtitleSearch)')
+                xbmc.executebuiltin('ActivateWindow(SubtitleSearch)')
                 currentPlaying = xbmc.Player().getPlayingFile()
     xbmc.sleep(1000)
 
