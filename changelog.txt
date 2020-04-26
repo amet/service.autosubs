@@ -1,4 +1,7 @@
-1.1.0
+1.1.1 - juokelis
+- Fixed: Exception settings are ignored
+
+1.1.0 - juokelis
 - Ported to python 3 to run on v19 Matrix
 - strings.xml > strings.po
 
