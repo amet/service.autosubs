@@ -97,7 +97,8 @@ class AutoSubsPlayer(xbmc.Player):
         Debug("Ended")
         self.run = True
 
-    def onPlayBackStarted(self):
+    # onPlayBackStarted fires while streams still buffer (getTotalTime() == 0), so ExcludeTime skipped them
+    def onAVStarted(self):
         if self.isPlayingVideo():
             check_for_specific = __addon__.getSettingBool('check_for_specific')
             specific_language = __addon__.getSetting('selected_language')
