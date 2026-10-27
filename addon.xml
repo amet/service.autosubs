@@ -7,7 +7,9 @@
   <extension point="xbmc.service" library="default.py" />
   <extension point="xbmc.addon.metadata">
     <summary lang="en_GB">Auto Search for Subtitles on Play</summary>
+    <summary lang="sv_SE">Sök automatiskt efter undertexter vid uppspelning</summary>
     <description lang="en_GB">Auto Search for Subtitles on Playback start if no subs are found.[CR][CR]Icon credits goes to zNET Computer Solutions http://www.znetcs.pl</description>
+    <description lang="sv_SE">Automatisk sökning efter undertexter vid uppspelning startar om inga undertexter hittas. [CR][CR]Ikon skapad av zNET Computer Solutions http://www.znetcs.pl</description>
     <news>
 v1.1.1 (2020-04-26) by juokelis
 - Fixed: Exception settings are ignored

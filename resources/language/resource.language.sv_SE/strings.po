@@ -1,0 +1,66 @@
+# Autosubs Swedish language file
+# Addon Name: Autosubs
+# Addon id: service.autosubs
+# Addon Provider: amet,schumi2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Autosubs\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2025-05-06 08:35+0200\n"
+"Last-Translator: Daniel Nylander <github@danielnylander.se>\n"
+"Language-Team: Swedish\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.6\n"
+
+msgctxt "#32010"
+msgid "General"
+msgstr "Allmänt"
+
+msgctxt "#32100"
+msgid "Enable debug mode"
+msgstr "Aktivera felsökningsläge"
+
+msgctxt "#32101"
+msgid "Look for a specific language"
+msgstr "Leta efter ett specifikt språk"
+
+msgctxt "#32102"
+msgid "Subtitle language"
+msgstr "Språk för undertexter"
+
+msgctxt "#32020"
+msgid "Exclusions"
+msgstr "Exkluderingar"
+
+msgctxt "#32200"
+msgid "Exclude for videos with less than X minutes"
+msgstr "Exkludera för videor med mindre än X minuter"
+
+msgctxt "#32201"
+msgid "Ignore words, comma separated"
+msgstr "Ignorera ord, kommaseparerade"
+
+msgctxt "#32202"
+msgid "Exclude Live TV"
+msgstr "Exkludera direktsänd TV"
+
+msgctxt "#32203"
+msgid "Exclude HTTP sources"
+msgstr "Exkludera HTTP-källor"
+
+msgctxt "#32204"
+msgid "Exclude path"
+msgstr "Exkludera sökväg"
+
+msgctxt "#32205"
+msgid "Folder's path (and subfolders)"
+msgstr "Mappens sökväg (och undermappar)"
+
+msgctxt "#32206"
+msgid "Exclude Music Videos"
+msgstr "Exkludera musikvideor"
